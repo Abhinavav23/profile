@@ -21,6 +21,10 @@
     height: 95% !important;
 }
 
+#copyPhone:focus{
+    box-shadow: none !important;
+}
+
 @media(min-width: 1199px){
     .port-item{
         padding-bottom: 3rem !important ;
