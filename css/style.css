@@ -17,6 +17,10 @@
     cursor: pointer;
 }
 
+.image{
+    height: 95% !important;
+}
+
 @media(min-width: 1199px){
     .port-item{
         padding-bottom: 3rem !important ;
