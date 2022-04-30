@@ -21,7 +21,7 @@
     height: 95% !important;
 }
 
-#copyPhone:focus{
+#copyEmail:focus{
     box-shadow: none !important;
 }
 
