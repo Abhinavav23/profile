@@ -17,8 +17,9 @@
     cursor: pointer;
 }
 
-.image{
-    height: 95% !important;
+.linkRef, .linkRef:hover{
+    text-decoration: none;
+    color: #ffffff;
 }
 
 #copyEmail:focus{

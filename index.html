@@ -15,7 +15,7 @@
         <header id="main-header">
             <div class="row no-gutters">
                 <div class="col-lg-4 col-md-5">
-                    <img class="image" src="./img/IMG_20200703_164353.jpg" alt="Abhinav's profile pic">
+                    <img class="image" src="./img/profile_pic_1.JPG" alt="Abhinav's profile pic">
                 </div>
                 <div class="col-lg-8 col-md-7">
                     <div class="d-flex flex-column">
@@ -23,7 +23,7 @@
                             <div class="d-flex flex-row justify-content-between align-items-center">
                                 <h1 class="display-4">Abhinav</h1>
                                 <div>
-                                    <a title="Visit Linkedin profile" href="https://www.linkedin.com/in/abhinav-kumar-867736156/" target="blank" class="text-white">
+                                    <a title="Visit Linkedin profile" href="https://www.linkedin.com/in/abhinav-k-867736156/" target="blank" class="text-white">
                                         <i class="fab fa-linkedin fa-2x"></i>
                                     </a>
                                 </div>
@@ -33,7 +33,7 @@
                                     </a>
                                 </div>
                                 <div class="d-none d-md-block">
-                                    <button id="copyEmail" title="copy Email" href="" class="btn text-white" onclick="copyEmail()">
+                                    <button id="copyEmail" title="Copy email" href="" class="btn text-white" onclick="copyEmail()">
                                         <i class="fa fa-envelope fa-2x"></i>
                                     </button>
                                 </div>
@@ -70,7 +70,7 @@
                 <p class="lead">A software professional seeking a position in the IT industry where my skills and strengths are optimally used for symbolic growth of the organization and also help me enhancing my technical and functional skills.</p>
             </div>  
             <div class="card card-body py-4 bg-light my-4">
-                <p class="lead text-monospace">5+ years of experience as a full stack javascript engineer for analyzing, developing and implementing web-based applications, having hands-on experience in various web development frameworks and libraries.</p>
+                <p class="lead text-monospace"><span id="yearOfExp"></span> years of experience as a full stack javascript engineer for analyzing, developing and implementing web-based applications, having hands-on experience in various web development frameworks and libraries.</p>
                 <h3>Technical Skills:-</h3>
                 <hr>
                 
@@ -125,11 +125,23 @@
         <div id="work" class="collpase my-3">
             <div class="card card-body bg-success text-white py-5">
                 <h3>Where am I working</h3>
-                <p class="lead">Working as a Consultant - Developer at Thoughtworks.</p>
+                <p class="lead">Working as a - UI Engineer at Salesforce.</p>
             </div>  
             <div class="card card-body py-4 bg-light my-4">
                 <h2>Employment History:</h2>
                 <div class="card-dec">
+
+                    <div class="card my-3">
+                        <div class="card-body">
+                            <h4 class="card-title">Salesforce</h4>
+                            <p class="card-text">Working with design system team to create functional components which can be used across salesforce and clients</p>
+                            <p class="p-3 mb-3 bg-dark text-white">Javascript | CSS | HTML | Web components | React | Node JS</p>
+                        </div>
+                        <div class="card-footer">
+                            <h6 class="text-muted">Dates: Dec 2023 - Present</h6>
+                        </div>
+                    </div>
+
                     <div class="card my-3">
                         <div class="card-body">
                             <h4 class="card-title">Thoughtworks</h4>
@@ -137,7 +149,7 @@
                             <p class="p-3 mb-3 bg-dark text-white">React Native | Typescript | Node.js | Express.js | AWS | Lambdas | DynamoDB</p>
                         </div>
                         <div class="card-footer">
-                            <h6 class="text-muted">Dates: Dec 2021 - Present</h6>
+                            <h6 class="text-muted">Dates: Dec 2021 - Nov 2023</h6>
                         </div>
                     </div>
 
@@ -216,10 +228,32 @@
         </footer>
     </div>
     <script>
+        let timerRef
         function copyEmail(){
             navigator.clipboard.writeText("abhinavkumar.bcrec@gmail.com");
             document.getElementById("copyEmail").title = "Copied"
+            timerRef = setTimeout(() => {
+                document.getElementById("copyEmail").title = "Copy email"
+            }, 3000)
         }
+        function calculateYearsFraction(pastDate="2018-04-24") {
+            const past = new Date(pastDate);
+            const current = new Date();
+
+            // Difference in milliseconds
+            const diffMilliseconds = current - past;
+
+            // Convert milliseconds to years
+            const yearsFraction = diffMilliseconds / (1000 * 60 * 60 * 24 * 365);
+            return yearsFraction.toFixed(1); // Rounding to 1 decimal places
+        }
+        window.addEventListener("DOMContentLoaded", () => {
+            const totalExp = calculateYearsFraction();
+            document.getElementById('yearOfExp').textContent = totalExp;
+        })
+        window.addEventListener("beforeunload", () => {
+            clearTimeout(timerRef);
+        });
     </script>
 </body>
 </html>
