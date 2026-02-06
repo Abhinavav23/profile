@@ -184,14 +184,15 @@
         <div id="contact" class="collpase">
             <div class="card card-body py-5">
                 <h3>Get In Touch</h3>
-                <form action="mailto:abhinavkumar.bcrec@gmail.com" method="POST">
+                <div id="form-message" class="alert" style="display: none;"></div>
+                <form id="contact-form">
                     <div class="input-group input-group-lg">
                         <div class="input-group-prepend">
                             <span class="input-group-text bg-danger text-white">
                                 <i class="fas fa-user"></i>
                             </span>
                         </div>
-                        <input type="text" class="form-control bg-dark text-white" placeholder="Name">
+                        <input type="text" name="name" id="name" class="form-control bg-dark text-white" placeholder="Name" required>
                     </div>
                     <div class="input-group input-group-lg">
                         <div class="input-group-prepend">
@@ -199,7 +200,7 @@
                                 <i class="fas fa-envelope-square"></i>
                             </span>
                         </div>
-                        <input type="email" class="form-control bg-dark text-white" placeholder="Email">
+                        <input type="email" name="email" id="email" class="form-control bg-dark text-white" placeholder="Email" required>
                     </div>
                     <div class="input-group input-group-lg">
                         <div class="input-group-prepend">
@@ -207,9 +208,9 @@
                                 <i class="fas fa-pen-square"></i>
                             </span>
                         </div>
-                        <textarea name="message" placeholder="Message" class="form-control bg-dark text-white"></textarea>
+                        <textarea name="message" id="message" placeholder="Message" class="form-control bg-dark text-white" required></textarea>
                     </div>
-                    <input type="submit" value="Contact" class="btn btn-danger btn-lg btn-block">
+                    <input type="submit" value="Contact" class="btn btn-danger btn-lg btn-block" id="submit-btn">
                 </form>
 
             </div>
@@ -220,13 +221,16 @@
         <footer id="mainfooter" class="p-4 bg-dark text-white mt-4">
             <div class="row">
                 <div class="col-md-6">
-                    <a href="/profile/ABHINAV_6yr.pdf" download class="btn btn-outline-light">
+                    <a href="/profile/ABHINAV_KUMAR_FrontEnd_7.8Yr.pdf" download class="btn btn-outline-light">
                         <i class="fa fa-cloud"></i> Download Resume
                     </a>
                 </div>
             </div>
         </footer>
     </div>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
     <script>
         let timerRef
         function copyEmail(){
@@ -250,6 +254,64 @@
         window.addEventListener("DOMContentLoaded", () => {
             const totalExp = calculateYearsFraction();
             document.getElementById('yearOfExp').textContent = totalExp;
+            
+            // Initialize EmailJS
+            // Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
+            emailjs.init("JAyWos7b2lLRXunZW");
+            
+            // Handle contact form submission
+            const contactForm = document.getElementById('contact-form');
+            const formMessage = document.getElementById('form-message');
+            const submitBtn = document.getElementById('submit-btn');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // Disable submit button
+                    submitBtn.disabled = true;
+                    submitBtn.value = 'Sending...';
+                    
+                    // Hide previous messages
+                    formMessage.style.display = 'none';
+                    
+                    try {
+                        // Send email using EmailJS
+                        // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID' with your actual values
+                        const response = await emailjs.sendForm(
+                            'service_qg5t1un',
+                            'JAyWos7b2lLRXunZW',
+                            contactForm
+                        );
+                        
+                        // Show success message
+                        formMessage.className = 'alert alert-success';
+                        formMessage.textContent = 'Thank you! Your message has been sent successfully.';
+                        formMessage.style.display = 'block';
+                        
+                        // Reset form
+                        contactForm.reset();
+                        
+                        // Scroll to message
+                        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        
+                    } catch (error) {
+                        // Show error message
+                        formMessage.className = 'alert alert-danger';
+                        formMessage.textContent = 'Sorry, there was an error sending your message. Please try again later or email me directly at abhinavkumar.bcrec@gmail.com';
+                        formMessage.style.display = 'block';
+                        
+                        // Scroll to message
+                        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        
+                        console.error('EmailJS Error:', error);
+                    } finally {
+                        // Re-enable submit button
+                        submitBtn.disabled = false;
+                        submitBtn.value = 'Contact';
+                    }
+                });
+            }
         })
         window.addEventListener("beforeunload", () => {
             clearTimeout(timerRef);
