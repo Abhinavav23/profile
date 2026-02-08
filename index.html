@@ -1,236 +1,426 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Abhinav's Profile</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <header id="main-header">
-            <div class="row no-gutters">
-                <div class="col-lg-4 col-md-5">
-                    <img class="image" src="./img/profile_1.png" alt="Abhinav's profile pic">
-                </div>
-                <div class="col-lg-8 col-md-7">
-                    <div class="d-flex flex-column">
-                        <div class="p-4 bg-dark text-white">
-                            <div class="d-flex flex-row justify-content-between align-items-center p-2">
-                                <h1 class="display-4">Abhinav</h1>
-                                <div>
-                                    <a title="Visit Linkedin profile" href="https://www.linkedin.com/in/abhinav-k-867736156/" target="blank" class="text-white">
-                                        <i class="fab fa-linkedin fa-2x"></i>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a title="Visit github profile" href="https://github.com/Abhinavav23" target="blank" class="text-white">
-                                        <i class="fab fa-github fa-2x"></i>
-                                    </a>
-                                </div>
-                                <div class="d-none d-md-block">
-                                    <button id="copyEmail" title="Copy email" href="" class="btn text-white" onclick="copyEmail()">
-                                        <i class="fa fa-envelope fa-2x"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-4 bg-black">
-                            Full Stack Javascript Engineer
-                        </div>
-                        <div>
-                            <div class="d-flex flex-row text-white align-items-strech text-center">
-                                <div class="port-item p-4 bg-primary">
-                                    <i class="fa fa-home fa-2x d-block"></i>
-                                    <span class="d-none d-sm-block">Home</span>
-                                  </div>
-                                <div class="p-4 port-item bg-success">
-                                    <i class="fa fa-folder-open fa-2x"></i>
-                                    <span class="d-none d-sm-block">Work</span>
-                                </div>
-                                <div class="p-4 port-item bg-danger">
-                                    <i class="fa fa-envelope fa-2x"></i>
-                                    <span class="d-none d-sm-block">Contact</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- home -->
-        <div id="home" class="collpase show">
-            <div class="card card-body bg-primary text-white py-5">
-                <h2>Objective</h2>
-                <p class="lead">A software professional seeking a position in the IT industry where my skills and strengths are optimally used for symbolic growth of the organization and also help me enhancing my technical and functional skills.</p>
-            </div>  
-            <div class="card card-body py-4 bg-light my-4">
-                <p class="lead text-monospace"><span id="yearOfExp"></span> years of experience as a full stack javascript engineer for analyzing, developing and implementing web-based applications, having hands-on experience in various web development frameworks and libraries.</p>
-                <h3>Technical Skills:-</h3>
-                <hr>
-                
-                <h4>JavaScript:</h4>
-                <div class="progress mb-3">
-                    <div class="progress-bar bg-success" style="width: 90%;"></div>
-                </div>
-                
-                <h4>React:</h4>
-                <div class="progress mb-3">
-                    <div class="progress-bar bg-success" style="width: 80%;"></div>
-                </div>
-                
-                <h4>Redux:</h4>
-                <div class="progress mb-3">
-                    <div class="progress-bar bg-success" style="width: 80%;"></div>
-                </div>
-                
-                <h4>HTML:</h4>
-                <div class="progress mb-3">
-                    <div class="progress-bar bg-success" style="width: 80%;"></div>
-                </div>
-               
-                <h4>CSS:</h4>
-                <div class="progress mb-3">
-                    <div class="progress-bar bg-success" style="width: 80%;"></div>
-                </div>
-                
-                 <h4>React Native:</h4>
-                <div class="progress mb-3">
-                    <div class="progress-bar bg-success" style="width: 60%;"></div>
-                </div>
-                
-                <h4>Node.js:</h4>
-                <div class="progress mb-3">
-                    <div class="progress-bar bg-success" style="width: 70%;"></div>
-                </div>
-                
-                <h4>Express.JS:</h4>
-                <div class="progress mb-3">
-                    <div class="progress-bar bg-success" style="width: 60%;"></div>
-                </div>
-                
-                <h4>Aws:</h4>
-                <div class="progress mb-3">
-                    <div class="progress-bar bg-success" style="width: 50%;"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- work -->
-        <div id="work" class="collpase my-3">
-            <div class="card card-body bg-success text-white py-5">
-                <h3>Where am I working</h3>
-                <p class="lead">Working as a - UI Engineer at Salesforce.</p>
-            </div>  
-            <div class="card card-body py-4 bg-light my-4">
-                <h2>Employment History:</h2>
-                <div class="card-dec">
-
-                    <div class="card my-3">
-                        <div class="card-body">
-                            <h4 class="card-title">Salesforce</h4>
-                            <p class="card-text">Working with design system team to create functional components which can be used across salesforce and clients</p>
-                            <p class="p-3 mb-3 bg-dark text-white">Javascript | CSS | HTML | Web components | React | Node JS</p>
-                        </div>
-                        <div class="card-footer">
-                            <h6 class="text-muted">Dates: Dec 2023 - Present</h6>
-                        </div>
-                    </div>
-
-                    <div class="card my-3">
-                        <div class="card-body">
-                            <h4 class="card-title">Thoughtworks</h4>
-                            <p class="card-text">Worked on creating a mobile application for a large scale Energy company in Europe with 110K+ active users using Micro Frontends, React Native, Node.js + DynamoDB in AWS lambdas.</p>
-                            <p class="p-3 mb-3 bg-dark text-white">React Native | Typescript | Node.js | Express.js | AWS | Lambdas | DynamoDB</p>
-                        </div>
-                        <div class="card-footer">
-                            <h6 class="text-muted">Dates: Dec 2021 - Nov 2023</h6>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">PegaSystems</h4>
-                            <p class="card-text">Worked on developing a Design system Library using React.JS, TypeScript which can be used by the
-                                UI developers to build the React applications using the components exposed by the library. The design
-                                system provides the flexibility for developers by allowing them to customize their UI as per their needs.</p>
-                            <p class="p-3 mb-3 bg-dark text-white">React | Redux |  HTML | CSS | JavaScript | Typescript | Jest | Enzyme </p>
-                        </div>
-                        <div class="card-footer">
-                            <h6 class="text-muted">Dates: Jan 2021 - Dec - 2021</h6>
-                        </div>
-                    </div>
-
-                    <div class="card mt-3">
-                        <div class="card-body">
-                            <h4 class="card-title">TechMahindra</h4>
-                            <p class="card-text">Worked on creating an internal shopping application where we had to design and prototype solutions for the shopping store.</p>
-                            <p class="p-3 mb-3 bg-dark text-white">Angular 8 |  HTML | CSS | JavaScript </p>
-                        </div>
-                        <div class="card-footer">
-                            <h6 class="text-muted">Dates: Apr 2018 - Dec - 2020</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- contact -->
-        <div id="contact" class="collpase">
-            <div class="card card-body py-5">
-                <h3>Get In Touch</h3>
-                <div id="form-message" class="alert" style="display: none;"></div>
-                <form id="contact-form">
-                    <div class="input-group input-group-lg">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-danger text-white">
-                                <i class="fas fa-user"></i>
-                            </span>
-                        </div>
-                        <input type="text" name="name" id="name" class="form-control bg-dark text-white" placeholder="Name" required>
-                    </div>
-                    <div class="input-group input-group-lg">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-danger text-white">
-                                <i class="fas fa-envelope-square"></i>
-                            </span>
-                        </div>
-                        <input type="email" name="email" id="email" class="form-control bg-dark text-white" placeholder="Email" required>
-                    </div>
-                    <div class="input-group input-group-lg">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-danger text-white">
-                                <i class="fas fa-pen-square"></i>
-                            </span>
-                        </div>
-                        <textarea name="message" id="message" placeholder="Message" class="form-control bg-dark text-white" required></textarea>
-                    </div>
-                    <input type="submit" value="Contact" class="btn btn-danger btn-lg btn-block" id="submit-btn">
-                </form>
-
-            </div>
-        </div>
-        
-    
-        <!-- footer -->
-        <footer id="mainfooter" class="p-4 bg-dark text-white mt-4">
-            <div class="row">
-                <div class="col-md-6">
-                    <a href="/profile/ABHINAV_KUMAR_FrontEnd_7.8Yr.pdf" download class="btn btn-outline-light">
-                        <i class="fa fa-cloud"></i> Download Resume
+      <header id="main-header">
+        <div class="row no-gutters">
+          <div class="col-lg-4 col-md-5">
+            <img
+              class="image"
+              src="./img/profile_1.png"
+              alt="Abhinav's profile pic"
+            />
+          </div>
+          <div class="col-lg-8 col-md-7">
+            <div class="d-flex flex-column">
+              <div class="p-4 bg-dark text-white">
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center p-2"
+                >
+                  <h1 class="display-4">Abhinav</h1>
+                  <div>
+                    <a
+                      title="Visit Linkedin profile"
+                      href="https://www.linkedin.com/in/abhinav-k-867736156/"
+                      target="blank"
+                      class="text-white"
+                    >
+                      <i class="fab fa-linkedin fa-2x"></i>
                     </a>
+                  </div>
+                  <div>
+                    <a
+                      title="Visit github profile"
+                      href="https://github.com/Abhinavav23"
+                      target="blank"
+                      class="text-white"
+                    >
+                      <i class="fab fa-github fa-2x"></i>
+                    </a>
+                  </div>
+                  <div class="d-none d-md-block">
+                    <button
+                      id="copyEmail"
+                      title="Copy email"
+                      href=""
+                      class="btn text-white"
+                      onclick="copyEmail()"
+                    >
+                      <i class="fa fa-envelope fa-2x"></i>
+                    </button>
+                  </div>
                 </div>
+              </div>
+              <div class="p-4 bg-black">
+                <p>Full Stack Javascript Engineer</p>
+              </div>
+              <div>
+                <div
+                  class="d-flex flex-row text-white align-items-strech text-center"
+                >
+                  <a class="port-item p-4 bg-primary" href="#home">
+                    <i class="fa fa-home fa-2x d-block"></i>
+                    <span class="d-none d-sm-block">Home</span>
+                  </a>
+                  <a class="p-4 port-item bg-success" href="#work">
+                    <i class="fa fa-folder-open fa-2x"></i>
+                    <span class="d-none d-sm-block">Work</span>
+                  </a>
+                  <a class="p-4 port-item bg-danger" href="#contact">
+                    <i class="fa fa-envelope fa-2x"></i>
+                    <span class="d-none d-sm-block">Contact</span>
+                  </a>
+                </div>
+              </div>
             </div>
-        </footer>
+          </div>
+        </div>
+      </header>
+
+      <!-- home -->
+    <div id="home" class="collpase show">
+        <div class="card card-body bg-primary text-white py-5">
+          <h2>Objective</h2>
+          <p class="lead">
+            Senior Frontend / UI Engineer with <span id="yearOfExp"></span> years of experience building
+            scalable, accessible web and mobile applications using React, React
+            Native, and Node.js. Experienced in Design Systems, Micro Frontends,
+            and AI-powered developer tools. Strong background in component
+            architecture, BFF systems, and cloud-native applications, with a
+            proven ability to lead teams and deliver high-quality UI at scale.
+          </p>
+        </div>
+      <div class="card card-body py-4 bg-light my-4">
+        <h3>Technical Skills</h3>
+        <hr />
+      
+        <!-- Frontend -->
+        <h4 class="mt-3">Frontend</h4>
+      
+        <small>JavaScript (ES6+), TypeScript</small>
+        <div class="progress mb-2">
+          <div class="progress-bar bg-success" style="width: 90%"></div>
+        </div>
+      
+        <small>React.js</small>
+        <div class="progress mb-2">
+          <div class="progress-bar bg-success" style="width: 85%"></div>
+        </div>
+      
+        <small>React Native</small>
+        <div class="progress mb-2">
+          <div class="progress-bar bg-success" style="width: 75%"></div>
+        </div>
+      
+        <small>Redux</small>
+        <div class="progress mb-2">
+          <div class="progress-bar bg-success" style="width: 80%"></div>
+        </div>
+      
+        <small>HTML5, CSS3, SASS, Styled Components</small>
+        <div class="progress mb-2">
+          <div class="progress-bar bg-success" style="width: 85%"></div>
+        </div>
+      
+        <small>Web Components</small>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-success" style="width: 70%"></div>
+        </div>
+      
+        <!-- Architecture & UI -->
+        <h4 class="mt-4">Architecture & UI</h4>
+      
+        <small>Design Systems, Component Libraries</small>
+        <div class="progress mb-2">
+          <div class="progress-bar bg-info" style="width: 85%"></div>
+        </div>
+      
+        <small>Micro Frontends</small>
+        <div class="progress mb-2">
+          <div class="progress-bar bg-info" style="width: 80%"></div>
+        </div>
+      
+        <small>Responsive Design, WCAG Accessibility</small>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-info" style="width: 85%"></div>
+        </div>
+      
+        <!-- Backend & Cloud -->
+        <h4 class="mt-4">Backend & Cloud</h4>
+      
+        <small>Node.js, Express.js</small>
+        <div class="progress mb-2">
+          <div class="progress-bar bg-warning" style="width: 75%"></div>
+        </div>
+      
+        <small>AWS Lambda, DynamoDB</small>
+        <div class="progress mb-2">
+          <div class="progress-bar bg-warning" style="width: 65%"></div>
+        </div>
+      
+        <small>REST APIs, BFF</small>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-warning" style="width: 70%"></div>
+        </div>
+      
+        <!-- Testing & Tooling -->
+        <h4 class="mt-4">Testing & Tooling</h4>
+      
+        <small>Jest, Enzyme, TDD / BDD</small>
+        <div class="progress mb-2">
+          <div class="progress-bar bg-secondary" style="width: 80%"></div>
+        </div>
+      
+        <small>CI/CD, Webpack, Babel, Jenkins</small>
+        <div class="progress mb-2">
+          <div class="progress-bar bg-secondary" style="width: 70%"></div>
+        </div>
+      
+        <small>Figma, AI-assisted Development</small>
+        <div class="progress mb-2">
+          <div class="progress-bar bg-secondary" style="width: 75%"></div>
+        </div>
+      </div>
+
+      <!-- work -->
+      <div id="work" class="collpase my-3">
+        <div class="card card-body bg-success text-white py-5">
+          <h3>Where am I working</h3>
+          <p class="lead">
+            Currently working as a Senior UI Engineer at Salesforce, focusing on
+            Design Systems, accessibility, and AI-powered design-to-code
+            workflows for internal cloud platforms.
+          </p>
+        </div>
+    
+    <div class="card card-body py-4 bg-light my-4">
+    <h2>Employment History</h2>
+
+    <!-- Salesforce -->
+    <div class="card my-3">
+    <div class="card-body">
+        <h4 class="card-title">Salesforce</h4>
+        <h6 class="text-muted">Senior UI Engineer</h6>
+
+        <ul class="card-text">
+        <li>
+            Designed and built scalable, accessible UI components as part of a
+            centralized Design System used across multiple Salesforce cloud teams.
+        </li>
+        <li>
+            Developed AI-powered tools and POCs using LLMs to improve developer
+            and designer productivity.
+        </li>
+        <li>
+            Built Figma plugins to automate design-to-code workflows while
+            enforcing internal coding standards.
+        </li>
+        <li>
+            Ensured WCAG accessibility compliance and UI consistency
+            across platforms.
+        </li>
+        </ul>
+
+        <p class="p-3 mb-3 bg-dark text-white">
+        React · TypeScript · Web Components · Design Systems · Figma · LLMs · Node.js · WCAG
+        </p>
+    </div>
+    <div class="card-footer">
+        <h6 class="text-muted">Dec 2023 – Present</h6>
+    </div>
+    </div>
+
+    <!-- Thoughtworks -->
+    <div class="card my-3">
+    <div class="card-body">
+        <h4 class="card-title">Thoughtworks</h4>
+        <h6 class="text-muted">Senior Frontend Engineer</h6>
+
+        <ul class="card-text">
+        <li>
+            Built a cross-platform web and mobile application serving
+            100K+ active users for a large European energy client.
+        </li>
+        <li>
+            Designed and implemented Micro Frontend architecture for
+            scalable and independently deployable features.
+        </li>
+        <li>
+            Developed BFF and backend services using Node.js and AWS Lambda.
+        </li>
+        <li>
+            Led feature delivery, estimations, and technical decision-making
+            while mentoring team members.
+        </li>
+        </ul>
+
+        <p class="p-3 mb-3 bg-dark text-white">
+        React Native · TypeScript · Node.js · AWS Lambda · DynamoDB · Micro Frontends · CI/CD
+        </p>
+    </div>
+    <div class="card-footer">
+        <h6 class="text-muted">Dec 2021 – Nov 2023</h6>
+    </div>
+    </div>
+
+    <!-- PegaSystems -->
+    <div class="card my-3">
+    <div class="card-body">
+        <h4 class="card-title">PegaSystems</h4>
+        <h6 class="text-muted">Software Engineer</h6>
+
+        <ul class="card-text">
+        <li>
+            Developed a reusable Design System library using React and TypeScript
+            to standardize UI development across teams.
+        </li>
+        <li>
+            Built internal UI tooling to improve developer experience and
+            accelerate feature delivery.
+        </li>
+        <li>
+            Implemented TDD/BDD practices and ensured accessibility compliance.
+        </li>
+        </ul>
+
+        <p class="p-3 mb-3 bg-dark text-white">
+        React · TypeScript · Redux · Styled Components · Jest · Enzyme · WCAG · CI/CD
+        </p>
+    </div>
+    <div class="card-footer">
+        <h6 class="text-muted">Jan 2021 – Dec 2021</h6>
+    </div>
+    </div>
+
+    <!-- Tech Mahindra -->
+    <div class="card my-3">
+    <div class="card-body">
+        <h4 class="card-title">Tech Mahindra</h4>
+        <h6 class="text-muted">Software Engineer</h6>
+
+        <ul class="card-text">
+        <li>
+            Designed and developed an internal shopping application
+            from prototype to production.
+        </li>
+        <li>
+            Migrated legacy UI to a modern SPA architecture.
+        </li>
+        <li>
+            Built responsive and reusable UI components.
+        </li>
+        </ul>
+
+        <p class="p-3 mb-3 bg-dark text-white">
+        Angular 8 · JavaScript · HTML5 · CSS3 · SPA Architecture
+        </p>
+    </div>
+    <div class="card-footer">
+        <h6 class="text-muted">Apr 2018 – Dec 2020</h6>
+    </div>
+    </div>
+
+      <!-- contact -->
+    <div id="contact" class="collpase">
+    <div class="card card-body py-5">
+        <h3>Get In Touch</h3>
+        <div id="form-message" class="alert" style="display: none"></div>
+        <form id="contact-form">
+        <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+            <span class="input-group-text bg-danger text-white">
+                <i class="fas fa-user"></i>
+            </span>
+            </div>
+            <input
+            type="text"
+            name="name"
+            id="name"
+            class="form-control bg-dark text-white"
+            placeholder="Name"
+            required
+            />
+        </div>
+        <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+            <span class="input-group-text bg-danger text-white">
+                <i class="fas fa-envelope-square"></i>
+            </span>
+            </div>
+            <input
+            type="email"
+            name="email"
+            id="email"
+            class="form-control bg-dark text-white"
+            placeholder="Email"
+            required
+            />
+        </div>
+        <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+            <span class="input-group-text bg-danger text-white">
+                <i class="fas fa-pen-square"></i>
+            </span>
+            </div>
+            <textarea
+            name="message"
+            id="message"
+            placeholder="Message"
+            class="form-control bg-dark text-white"
+            required
+            ></textarea>
+        </div>
+        <input
+            type="submit"
+            value="Contact"
+            class="btn btn-danger btn-lg btn-block"
+            id="submit-btn"
+        />
+        </form>
+    </div>
+    </div>
+
+      <!-- footer -->
+    <footer id="mainfooter" class="p-4 bg-dark text-white mt-4">
+    <div class="row">
+        <div class="col-md-6">
+        <a
+            href="/profile/ABHINAV_KUMAR_FrontEnd_7.8Yr.pdf"
+            download
+            class="btn btn-outline-light"
+        >
+            <i class="fa fa-cloud"></i> Download Resume
+        </a>
+        </div>
+    </div>
+    </footer>
     </div>
     <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
     <!-- Custom JavaScript -->
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
