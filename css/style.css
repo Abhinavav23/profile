@@ -1,12 +1,12 @@
 html {
   scroll-behavior: smooth;
 }
-a{
-    color: #ffffff;
-    &:hover{
-        text-decoration: none;
-        color: #ddd;
-    }
+a {
+  color: #ffffff;
+  &:hover {
+    text-decoration: none;
+    color: #ddd;
+  }
 }
 
 #main-header img {
@@ -41,5 +41,10 @@ a{
 @media (min-width: 1199px) {
   .port-item {
     padding-bottom: 3rem !important ;
+  }
+}
+@media (max-width: 480px) {
+  .container {
+    padding-inline: 0 !important ;
   }
 }
